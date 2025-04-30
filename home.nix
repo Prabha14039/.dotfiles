@@ -20,6 +20,8 @@
     # ./nvim.nix
   ];
 
+# Add your user to the Docker group
+
   nixpkgs = {
     # You can add overlays here
     # Configure your nixpkgs instance
@@ -50,12 +52,19 @@
           pkgs.docker_28
           pkgs.gh
           micromamba
+          pkgs.docker-compose
   ];
 
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+  programs.docker.enable = true;
+  programs.docker.compose.enable = true;
+
+  users.users.prabha14039 = {
+      extraGroups = [ "docker" ];
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
