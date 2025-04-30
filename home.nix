@@ -10,14 +10,7 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/home-manager):
-    # outputs.homeManagerModules.example
-
-    # Or modules exported from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModules.default
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+    ./symlinks.nix
   ];
 
 # Add your user to the Docker group
@@ -53,7 +46,11 @@
           pkgs.gh
           micromamba
           pkgs.docker-compose
-  ];
+          pkgs.air
+          pkgs.nodejs_22
+          pkgs.networkmanagerapplet
+          pkgs.swaylock
+    ];
 
 # Enable home-manager and git
   programs.home-manager.enable = true;
@@ -62,8 +59,5 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  #create symlinks
-  home.file.".config/nvim".source = ./.config/nvim;
-  home.file.".zshrc".source = ./.config/zsh/.zshrc;
 }
 
