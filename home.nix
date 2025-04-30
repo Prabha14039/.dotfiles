@@ -1,4 +1,4 @@
-# This is your home-manager configuration file
+
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
@@ -57,6 +57,7 @@
           pkgs.nodejs_22
           pkgs.networkmanagerapplet
           pkgs.swaylock-effects
+          pkgs.htop
     ];
 
 # Enable home-manager and git
@@ -67,9 +68,10 @@
   systemd.user.startServices = "sd-switch";
 
   #create symlinks
-  home.file.".config/nvim".source = ./.config/nvim;
-  home.file.".bashrc".source = ./.config/zsh/.bashrc;
-  home.file.".config/swaylock".source = ./.config/swaylock;
-  home.file.".config/xkb".source = ./.config/xkb;
+  home.file.".config/nvim".source = ./.config/nvim; #nvim added
+  home.file.".bashrc".source = ./.config/bash/.bashrc; #bashrc added
+  home.file.".config/swaylock".source = ./.config/swaylock; #swaylock added
+  home.file.".config/xkb".source = ./.config/xkb; #not added
+  home.file.".config/waybar".source = ./.config/waybar; #waybar added
 }
 
