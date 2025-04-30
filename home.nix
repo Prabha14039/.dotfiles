@@ -71,5 +71,6 @@
   home.file.".zshrc".source = ./.config/zsh/.zshrc;
   home.file.".config/swaylock".source = ./.config/swaylock;
   home.file.".config/xkb".source = ./.config/xkb;
+  home.file.".config/hypr".source = ./.config/hypr;
 }
 
