@@ -105,7 +105,6 @@
     git
     foot
     rofi-wayland
-    neovim
     wl-clipboard
     hyprland
     waybar
@@ -157,8 +156,7 @@
   };
 
   fonts.packages = with pkgs; [
-	  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-	  jetbrains-mono
+	  nerd-fonts.jetbrains-mono
   ];
   users.defaultUserShell = pkgs.zsh; 
 

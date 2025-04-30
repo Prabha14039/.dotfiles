@@ -1,24 +1,23 @@
 {
-  description = "My NixOS system and Home Manager dotfiles flake";
+  description = "Home Manager configuration flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      prabha14039 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+    homeConfigurations = {
+      # Simple username-based configuration
+      "prabha14039" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux"; # Or use builtins.currentSystem
+        };
         modules = [
-          ./nixos/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.prabha14039 = ./home.nix;
-          }
+          ./home.nix
         ];
       };
     };

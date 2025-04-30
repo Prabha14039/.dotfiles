@@ -10,6 +10,6 @@
     vimdiffAlias = true;
   };
 
-  home.file.".config/nvim".source = ./config/nvim;
+  home.file.".config/nvim".source = ./.config/nvim;
 }
 
