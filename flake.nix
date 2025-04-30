@@ -9,7 +9,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      myhost = nixpkgs.lib.nixosSystem {
+      prabha14039 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./nixos/configuration.nix
@@ -17,7 +17,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.yourusername = ./home.nix;
+            home-manager.users.prabha14039 = ./home.nix;
           }
         ];
       };
