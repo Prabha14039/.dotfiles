@@ -54,10 +54,16 @@
           micromamba
           pkgs.docker-compose
           pkgs.air
-          pkgs.nodejs_22
+          pkgs.nodejs_23
           pkgs.networkmanagerapplet
           pkgs.swaylock-effects
           pkgs.htop
+          pkgs.direnv
+          pkgs.code-cursor
+          pkgs.stdenv.cc.cc.lib
+          pkgs.zlib
+          pkgs.libGL
+          pkgs.google-chrome
     ];
 
 # Enable home-manager and git
