@@ -64,6 +64,11 @@
           pkgs.zlib
           pkgs.libGL
           pkgs.google-chrome
+          pkgs.libreoffice
+          pkgs.freeglut
+          pkgs.mesa
+          pkgs.libGL
+          pkgs.libGLU
     ];
 
 # Enable home-manager and git
