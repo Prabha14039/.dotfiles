@@ -38,6 +38,7 @@
     stateVersion =  "24.05";
   };
 
+
   # Add stuff for your user as you see fit:
   programs.neovim = {
       enable = true;
@@ -61,15 +62,13 @@
           pkgs.direnv
           pkgs.code-cursor
           pkgs.stdenv.cc.cc.lib
-          pkgs.zlib
-          pkgs.libGL
           pkgs.google-chrome
           pkgs.libreoffice
-          pkgs.freeglut
-          pkgs.mesa
-          pkgs.libGL
-          pkgs.libGLU
+          pkgs.unzip
+          pkgs.emacs
     ];
+
+
 
 # Enable home-manager and git
   programs.home-manager.enable = true;
